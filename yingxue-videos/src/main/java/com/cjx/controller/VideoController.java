@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class VideoController {
     @GetMapping("/")
     public String de() {
-        return "hello";
+        return "hello world";
     }
 }
