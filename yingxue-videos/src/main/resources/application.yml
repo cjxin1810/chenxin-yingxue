@@ -1,0 +1,21 @@
+server:
+  port: 9092
+spring:
+  application:
+    name: api-video
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 20010106
+    url: jdbc:mysql://192.168.175.161:3306/yingxue?serverTimezone=UTC&useSSL=false&characterEncoding=utf-8
+  cloud:
+    nacos:
+      server-addr: 192.168.175.161:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+  redis:
+    port: 6379
+    host: 192.168.175.161
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

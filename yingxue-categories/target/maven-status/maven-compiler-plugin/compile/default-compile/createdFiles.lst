@@ -1,0 +1,5 @@
+com\cjx\controller\CategoryController.class
+com\cjx\service\CategoryService.class
+com\cjx\mapper\CategoryMapper.class
+com\cjx\CategoryApplication.class
+com\cjx\service\impl\CategoryServiceImpl.class

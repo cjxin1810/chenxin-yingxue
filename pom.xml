@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cjx</groupId>
+    <artifactId>yingxue-api</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>yingxue-commons</module>
+        <module>yingxue-categories</module>
+        <module>yingxue-gateway</module>
+        <module>yingxue-search</module>
+        <module>yingxue-sms</module>
+        <module>yingxue-users</module>
+        <module>yingxue-videos</module>
+        <module>interceptor</module>
+    </modules>
+
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <java.version>1.8</java.version>
+
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
+        <mybatis-plus.spring.boot.starter.version>3.4.0</mybatis-plus.spring.boot.starter.version>
+        <mysql.connector.java.version>5.1.47</mysql.connector.java.version>
+        <druid.vcerion>1.2.1</druid.vcerion>
+        <commons.fileupload.version>1.4</commons.fileupload.version>
+        <javacpp.version>1.4.1</javacpp.version>
+        <javacv.version>1.4.1</javacv.version>
+        <opencv.platform.version>3.4.1-1.4.1</opencv.platform.version>
+        <ffmpeg.platform.version>3.4.2-1.4.1</ffmpeg.platform.version>
+        <aliyun.java.sdk.core.version>4.5.3</aliyun.java.sdk.core.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <fastjson.version>1.2.74</fastjson.version>
+        <aliyun.sdk.oss.version>3.10.2</aliyun.sdk.oss.version>
+        <spring.cloud.openfeign.version>2.2.6.RELEASE</spring.cloud.openfeign.version>
+    </properties>
+
+    <!--    springboot 父项目-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.5.RELEASE</version>
+    </parent>
+
+    <!-- 维护   springCloud 版本  springCloud阿里巴巴 版本-->
+    <dependencyManagement>
+        <dependencies>
+            <!--引入springCloud alibaba-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-openfeign-dependencies</artifactId>
+                <version>${spring.cloud.openfeign.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--引入springCloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.spring.boot.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.java.sdk.core.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

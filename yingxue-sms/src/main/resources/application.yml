@@ -1,0 +1,22 @@
+server:
+  port: 9093
+spring:
+  application:
+    name: api-sms
+  redis:
+    port: 6379
+    host: 192.168.175.161
+  cloud:
+    nacos:
+      server-addr: 192.168.175.161:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+sms:
+  accesskeyId: LTAI5tRiMtzMbSpREe5adPw6
+  secret: mjYyS1msRPXBQkHFKWxWEMh0GU4ECU
+  signName: 阿里云短信测试
+  templateCode: SMS_154950909
+  regionId: cn-hangzhou
+logging:
+  level:
+    com.cjx: debug

@@ -1,0 +1,39 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.175.161:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: api-sms
+          uri: lb://api-sms
+          predicates:
+            - Path=/api/captchas
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/msg
+        - id: api-user
+          uri: lb://api-user
+          predicates:
+            - Path=/api/tokens/**,/api/user/**
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/user
+        - id: api-category
+          uri: lb://api-category
+          predicates:
+            - Path=/api/categories/**
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/category
