@@ -10,6 +10,8 @@ import com.cjx.mapper.UserMapper;
 import com.cjx.vo.MsgVo;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
 * @author chenxin
