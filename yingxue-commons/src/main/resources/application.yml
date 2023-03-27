@@ -1,6 +1,6 @@
 sms:
-  accesskeyId: LTAI5tRiMtzMbSpREe5adPw6
-  secret: mjYyS1msRPXBQkHFKWxWEMh0GU4ECU
+  accesskeyId: 
+  secret:
   signName: 阿里云短信测试
   templateCode: SMS_154950909
   regionId: cn-hangzhou
