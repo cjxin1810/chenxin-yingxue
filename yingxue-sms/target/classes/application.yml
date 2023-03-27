@@ -12,10 +12,10 @@ spring:
       discovery:
         server-addr: ${spring.cloud.nacos.server-addr}
 sms:
-  accesskeyId: LTAI5tRiMtzMbSpREe5adPw6
-  secret: mjYyS1msRPXBQkHFKWxWEMh0GU4ECU
+  accesskeyId: 
+  secret: 
   signName: 阿里云短信测试
-  templateCode: SMS_154950909
+  templateCode: 
   regionId: cn-hangzhou
 logging:
   level:
